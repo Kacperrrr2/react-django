@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: django-backend
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn newproject.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: newproject.settings
+    plan: free
+    rootDir: newproject
